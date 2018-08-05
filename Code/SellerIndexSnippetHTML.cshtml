@@ -1,0 +1,52 @@
+@using Microsoft.AspNet.Identity
+
+
+@model IEnumerable<BlueRibbonsReview.ViewModels.AnalyticsViewModel>
+
+
+
+    @{
+    var user = (System.Security.Claims.ClaimsIdentity)User.Identity;
+    ViewBag.Title = user.FindFirstValue("CustomName") + "'s Campaigns";
+    }
+    <h2> @ViewBag.Title</h2>
+
+    <p>
+        <a href="@Url.Action(" Create", "Campaigns" )"><i class="fas fa-pencil-alt"></i> Create New</a>
+    </p>
+    @foreach (var item in Model)
+    {
+
+    @*Helper method to control pluralization used on line 20 for number of campaign reviews.*@
+    @helper pluralize(int amount, string singular, string plural)
+    {
+    @(amount == 1 ? singular : plural)
+    }
+    <div class="row">
+        <div class="sellerIndex-img-container sellerIndex-float">
+            <img class="sellerIndex-img" src="@item.Campaign.ImageUrL" alt="@item.Campaign.Name" />
+        </div>
+        <div class="sellerIndex-item sellerIndex-float">| @Html.DisplayFor(modelItem => item.Campaign.Name) | </div>
+        @if (item.Campaign.Reviews.Count > 0) //Adds the star rating if there are reviews.
+        {
+        <div class="sellerIndex-stars sellerIndex-item sellerIndex-float">
+            <div class="sellerIndex-stars-rating" style="width:@(item.ReviewAverage*20)px;">
+                &nbsp;
+            </div>
+        </div>
+        <div class="sellerIndex-item sellerIndex-float">|</div>
+        }
+        <div class="sellerIndex-item sellerIndex-float"> @{var reviewsCount = item.Campaign.Reviews.Count; @pluralize(reviewsCount, +reviewsCount + " review", +reviewsCount + " reviews")} | </div>
+        <a class="sellerIndex-item" data-toggle="collapse" href="#demo-@item.Campaign.CampaignID" style="float: left;">See more details</a>
+    </div>
+    <div class="row">
+        <div id="demo-@item.Campaign.CampaignID" class="collapse">
+            @{
+            Html.RenderPartial("_SellerIndexDetails", item);
+            }
+        </div>
+    </div>
+
+    <br />
+    <br />
+    }

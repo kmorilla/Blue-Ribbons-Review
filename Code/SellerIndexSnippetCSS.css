@@ -1,0 +1,34 @@
+/*----- Row and Star Styling for Seller Index Page -----*/
+.sellerIndex-stars {
+    display: block;
+    width: 100px;
+    height: 25px;
+    background: url('/Images/gray-stars.png') no-repeat;
+    background-size: 100px;
+}
+
+.sellerIndex-stars-rating {
+    display: block;
+    height: 20px;
+    background: url('/Images/gold-stars.png') no-repeat;
+    background-size: 100px;
+}
+
+.sellerIndex-float {
+    float: left;
+}
+
+.sellerIndex-img {
+    max-height: 50px;
+    max-width: 60px;
+    margin: 5px auto;
+}
+
+.sellerIndex-img-container {
+    height: 60px;
+    width: 60px;
+}
+
+.sellerIndex-item {
+    margin-top: 20px !important;
+}
