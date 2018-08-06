@@ -92,7 +92,7 @@ div.details-color, a.details-color, h3-details-color {
 ## Popover
 This assignment had me change the popover effect from being to wide and have some padding around the text. As you can see in the before image, because we were using Bootstrap 3, the popover defaulted to the default popover effect. After adding the popover jQuery from Bootstrap 4, the popover effect is much cleaner and neat. 
 ### Before
-
+![popoverbefore](https://user-images.githubusercontent.com/37521213/43691926-c3ee1768-98d7-11e8-8725-ed2545099c21.jpg)
 ```
 $(function () {
   $('[data-toggle="popover"').popover({
@@ -100,5 +100,17 @@ $(function () {
     trigger: 'hover'
   });
 });
+```
+### After
+![popoverafter](https://user-images.githubusercontent.com/37521213/43691925-c3d5274e-98d7-11e8-844b-0756d3901488.jpg)
+
+## Character Count
+This assignment had me move the character count element to be beneath the Review text box. The reason why it was so low was because there was an unused div tag before the character count element. Then, because the character count element was hidden until you typed in the Review text box, when it would be displayed the the items underneath would shift down. To fix this, I gave the character count a small height.  
+### Before
+
+```
+.character-box {
+  height: 15px;
+}
 ```
 ### After
