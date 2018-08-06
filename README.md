@@ -145,8 +145,12 @@ else
   element.appendChild(para).className = "fa fa-shopping-cart shopping-cart-margin";
 </script>
 ```
-### Story One
+### Story One with Icon
+![wishlistnoproducts](https://user-images.githubusercontent.com/37521213/43695499-ec8ea2f8-98ed-11e8-8a43-ba697508f758.jpg)
+### Story Two with Icon
+![wishliststoryoneandtwo](https://user-images.githubusercontent.com/37521213/43695500-eca643d6-98ed-11e8-9584-ec41539240ba.jpg)
 
-### Story Two
+## Star Rating
+The assignment for this story was to swap the average rating, which was in a row, with the average star rating, which was in the accordian drop down. When I swapped them, the styling in the row broke and the star rating was too big for the row. I first had to find a new star rating to use because the previous one would break when shrinking. I tried multiple JavaScript and jQuery methods but none of them would work. I ended up finding a CSS method, played around with it until it worked how I wanted it to, and I added it to the code. The styling of the row was still off because the previous programmer had placed every item in the row on one div instead of individual divs. I rewrote the HTML code, styled it with CSS, used Razor to determine whether to display the star rating or not, and moved the accordian collapse into a partial view. The output image is below and the code is in the Code folder. 
 
-### Story Three
+### Output
