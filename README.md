@@ -107,10 +107,46 @@ $(function () {
 ## Character Count
 This assignment had me move the character count element to be beneath the Review text box. The reason why it was so low was because there was an unused div tag before the character count element. Then, because the character count element was hidden until you typed in the Review text box, when it would be displayed the the items underneath would shift down. To fix this, I gave the character count a small height.  
 ### Before
-
+![charactercountbefore](https://user-images.githubusercontent.com/37521213/43692101-41d724a2-98d9-11e8-9615-b8a95b0eeace.jpg)
 ```
 .character-box {
   height: 15px;
 }
 ```
 ### After
+![charactercountafter](https://user-images.githubusercontent.com/37521213/43692100-41bff0a2-98d9-11e8-8278-5300cce1df09.jpg
+
+## Wishlist Page
+On the Wishlist page, I completed a few stories that included: if there were no items in the Wishlist, it would display the message "You currently have no items in your Wishlist. Check out our products here!"; adding a new column with a link that would take you to see the item on Amazon; and adding a shopping cart icon next to the title. The first story was completed using Razor code with an if else statment where it would check to see if there were any items in the Wishlist, and then display the message or the items. For the second story, I had to add a new column with knockoutjs and target the item's URL with Razor code because it was saved in the database. Because the title in the last story was in a ViewBag, I needed to use JavaScript to add an icon from Font Awesome. The script would target the element of the ViewBag, create a copy of the element after it, and then add the Font Awesome icon class to the new element. 
+
+```
+//The if statement for the first story
+@if (Model.Wishlists.Count() == 0)
+{
+  <div class="container">
+    <div class="row">
+      <h4>You currently have no items in your Wishlist. Check out our products @Html.ActionLink("here!", "Index", "Campaigns")</h4>
+    </div>
+  </div>
+}
+else
+{
+...
+
+//The Amazon link for the second story
+<td class="td-valign">
+  <a href="@item.Campaign.VendorsPurchaseURL" target="_blank">See on Amazon</a>
+</td
+
+//The JavaScript code for the third story
+<script>
+  var para = document.createElement("h3");
+  var element = document.getElementsByTagName("H3")[0];
+  element.appendChild(para).className = "fa fa-shopping-cart shopping-cart-margin";
+</script>
+```
+### Story One
+
+### Story Two
+
+### Story Three
