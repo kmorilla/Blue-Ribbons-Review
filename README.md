@@ -5,8 +5,6 @@ Blue Ribbons Review is a website that allows sellers to get their products some 
 The assignment for this story was to just add a background color to the datepicker element. As seen in the before image, the datepicker was very ugly and cramped, so I decided to get a little more creative than to just add a background color. By researching online, I was able to learn how to change the design of the datepicker and I altered it to my liking. 
 ### Before
 ![datepickerbefore](https://user-images.githubusercontent.com/37521213/43691573-5aa2bd76-98d3-11e8-84b9-d49c029b16bf.jpg)
-### After
-![datepickerafter](https://user-images.githubusercontent.com/37521213/43691572-5a8bf618-98d3-11e8-87a0-cd0fb34f01fe.jpg)
 ```
 .ui-datepicker {
   width: 200px;
@@ -40,6 +38,8 @@ The assignment for this story was to just add a background color to the datepick
   float: right;
 }
 ```
+### After
+![datepickerafter](https://user-images.githubusercontent.com/37521213/43691572-5a8bf618-98d3-11e8-87a0-cd0fb34f01fe.jpg)
 
 ## Modal Changes
 In the Details partial view, I completed multiple stories editing the modal. The edits include: adding a border around the modal and the image, making the entire text black except the sale price, enlarging the image, and having the buttons to the left and the links to the right.
@@ -83,3 +83,22 @@ div.details-color, a.details-color, h3-details-color {
   flex: 1;
   padding: 10px;
 }
+```
+### Output
+![modalimg](https://user-images.githubusercontent.com/37521213/43691810-4dbe9fdc-98d6-11e8-91b0-c0cdfd1c4fc4.jpg)
+
+![modalbuttons](https://user-images.githubusercontent.com/37521213/43691809-4da7d860-98d6-11e8-8432-596989a0025e.jpg)
+
+## Popover
+This assignment had me change the popover effect from being to wide and have some padding around the text. As you can see in the before image, because we were using Bootstrap 3, the popover defaulted to the default popover effect. After adding the popover jQuery from Bootstrap 4, the popover effect is much cleaner and neat. 
+### Before
+
+```
+$(function () {
+  $('[data-toggle="popover"').popover({
+    placement: 'right',
+    trigger: 'hover'
+  });
+});
+```
+### After
